@@ -4,21 +4,36 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Contact Page discord</title>
+    <title>Alxay Website</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
+    <style>
+    </style>
 </head>
 <body>
+    <header>
+        <h1>Alxay Website</h1>
+        <nav>
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
     <div class="Contact">
-        <h1 id="ContactText">Contact</h1>
+        <h2 id="ContactText">Contact</h2>
         <label class="Name-Input">
-            <input maxlength=37 minlength="2" id="NameInput" type="text" required/>
-            <span class="placeholder">Name</span>
+            <input maxlength="37" minlength="2" id="NameInput" type="text" required placeholder="Name"/>
         </label>
-        <textarea maxlength ="2000" id="InputField" placeholder="Your message here"></textarea>
-        <button onclick="send()" id="SendMessage">SendMessage</button>
+        <textarea maxlength="2000" id="InputField" placeholder="Your message here"></textarea>
+        <button onclick="send()" id="SendMessage">Send Message</button>
         <h3 id="MessageSent">Message sent!</h3>
         <h3 id="MessageFailed">Message failed!</h3>
     </div>
+
+    <footer>
+        <p>&copy; 2024 Alxay. All rights reserved.</p>
+    </footer>
 </body>
 </html>
