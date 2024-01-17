@@ -1,40 +1,78 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pl">
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Alxay Website</title>
-    <link rel="stylesheet" href="main.css">
-    <script src="main.js"></script>
-    <style>
-        /* Dodaj styl CSS, jeśli to konieczne */
-    </style>
+  <title>Alxay website</title>
+  <meta charset="UTF-8">
+  <meta name="description" content="Alxay website">
+  <meta name="keywords" content="alxay, website, sigma">
+  <meta name="author" content="Alxay">
+  <meta name="robots" content="index">
+  <link rel="stylesheet" href="styl.css" type="text/css">
+  <script type="text/javascript" src="skrypt.js"></script>
+  <link rel="shortcut icon" href="favicon.ico">
+  <style type="text/css">
+    /* Add your styles here */
+    
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #000000;
+      margin: 0;
+      padding: 0;
+    }
+
+    h1 {
+      text-align: left;
+      color: #333;
+      padding: 30px;
+      background-color: #fff;
+      border-bottom: 2px solid #ddd;
+      margin: 0;
+      font-size: 3em;
+    }
+
+    nav {
+      text-align: left;
+      background-color: #ffffff;
+      padding: 10px;
+    }
+
+    nav a {
+      color: #000000;
+      text-decoration: none;
+      padding: 10px 20px;
+      margin: 0 10px;
+      font-weight: bold;
+    }
+
+    /* Increase the background size */
+    body {
+      background-size: cover;
+      background-position: center;
+    }
+
+    p {
+      font-size: 1.2em;
+      color: #fff;
+      margin: 10px 0 0 50px; /* Adjusted the top margin */
+      text-align: left;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <h1>Alxay Website</h1>
-        <nav>
-            <a href="#">Home</a>
-            <a href="#">About</a>
-            <a href="#">Services</a>
-            <a href="contact.html">Contact</a>
-        </nav>
-    </header>
 
-    <div class="Contact">
-        <h2 id="ContactText">Contact</h2>
-        <label class="Name-Input">
-            <input maxlength="37" minlength="2" id="NameInput" type="text" required placeholder="Name"/>
-        </label>
-        <textarea maxlength="2000" id="InputField" placeholder="Your message here"></textarea>
-        <button onclick="send()" id="SendMessage">Send Message</button>
-        <h3 id="MessageSent" style="display: none;">Message sent!</h3>
-        <h3 id="MessageFailed" style="display: none;">Message failed!</h3>
-    </div>
+  <nav>
+    <a href="#home">Home</a>
+    <a href="#contact">Contact</a>
+  </nav>
 
-    <footer>
-        <p>&copy; 2024 Alxay. All rights reserved.</p>
-    </footer>
+  <h1 style="font-family: 'Nova Square', sans-serif; font-size: 100px; margin-top: 20%px; text-align: center; background: #3cc413; background: radial-gradient(circle farthest-corner at top center, #22b105 5%, #239207 36%); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">Alxay</h1>
+
+  <p>Cześć! Jestem Alxay, lubię grać w CS 2, BeamNG drive.</p>
+  <p>Moje hobby to tworzenie stron internetowych. Mam nadzieję,</p>
+  <p>że podoba Ci się strona. Życzę miłego dnia!</p>
+
+  <!-- Your content goes here -->
+
 </body>
 </html>
+
