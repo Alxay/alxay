@@ -5,63 +5,69 @@ body {
     box-sizing: border-box;
 }
 
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
 header {
     background-color: #333;
     color: #fff;
-    padding: 20px;
-    text-align: center;
+    padding: 1em 0;
+}
+
+header h1 {
+    margin: 0;
+}
+
+nav {
+    display: flex;
+    justify-content: space-around;
 }
 
 nav a {
     color: #fff;
     text-decoration: none;
-    margin: 0 15px;
-    font-weight: bold;
+    padding: 0.5em 1em;
 }
 
 nav a:hover {
-    text-decoration: underline;
-}
-
-.Contact {
-    max-width: 800px;
-    margin: 20px auto;
-    padding: 20px;
-    border: 1px solid #ccc;
-    border-radius: 5px;
-}
-
-.Name-Input input,
-#InputField,
-#SendMessage {
-    margin: 10px 0;
-    padding: 10px;
-    width: 100%;
-    box-sizing: border-box;
-}
-
-#SendMessage {
-    background-color: #333;
-    color: #fff;
-    cursor: pointer;
-}
-
-#SendMessage:hover {
     background-color: #555;
 }
 
-#MessageSent,
-#MessageFailed {
-    color: #4CAF50;
-    display: none;
+.contact-section {
+    margin: 2em 0;
+}
+
+label {
+    display: block;
+    margin-bottom: 0.5em;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 0.5em;
+    margin-bottom: 1em;
+}
+
+button {
+    background-color: #333;
+    color: #fff;
+    padding: 0.5em 1em;
+    border: none;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #555;
 }
 
 footer {
     background-color: #333;
     color: #fff;
     text-align: center;
-    padding: 10px;
-    position: fixed;
-    bottom: 0;
+    padding: 1em 0;
+    position: absolute;
     width: 100%;
+    bottom: 0;
 }
