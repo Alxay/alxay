@@ -73,10 +73,24 @@
             }
 
             try {
-                fetch(whurl + "?wait=true", { "method": "POST", "headers": { "content-type": "application/json" }, "body": JSON.stringify(msg) });
-                document.getElementById("InputField").value = "";
-                displayMessage(messageSent, 'Message sent!');
+                fetch(whurl + "?wait=true", { "method": "POST", "headers": { "content-type": "application/json" }, "body": JSON.stringify(msg) })
+                .then(response => {
+                    if (!response.ok) {
+                        throw new Error('Message failed!');
+                    }
+                    return response.json();
+                })
+                .then(data => {
+                    console.log(data);
+                    document.getElementById("InputField").value = "";
+                    displayMessage(messageSent, 'Message sent!');
+                })
+                .catch(error => {
+                    console.error(error);
+                    displayMessage(messageFailed, 'Message failed!');
+                });
             } catch (e) {
+                console.error(e);
                 displayMessage(messageFailed, 'Message failed!');
             }
         }
