@@ -8,50 +8,6 @@
     <title>Alxay Website</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
-    <script>
-        // Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
-        function isCooldownExpired() {
-            var lastSentTime = localStorage.getItem('lastSentTime');
-            if (!lastSentTime) {
-                return true;
-            }
-            var currentTime = new Date().getTime();
-            var elapsedTime = currentTime - parseInt(lastSentTime);
-            var cooldownTime = 1 * 60 * 1000; // 1 minuta w milisekundach
-            return elapsedTime >= cooldownTime;
-        }
-
-        function isNameAllowed(name) {
-            return name.toLowerCase() !== 'alxay';
-        }
-
-        function send() {
-            var nameInput = document.getElementById('NameInput');
-            var inputField = document.getElementById('InputField');
-            var messageSent = document.getElementById('MessageSent');
-            var messageFailed = document.getElementById('MessageFailed');
-
-            if (!isCooldownExpired()) {
-                alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (1 minuta)');
-                return;
-            }
-
-            var userName = nameInput.value.trim();
-            if (!isNameAllowed(userName)) {
-                alert('Nazwa Alxay nie jest dla ciebie dozwolona!');
-                return;
-            }
-
-            // Zapisanie czasu ostatniego wysłania wiadomości
-            localStorage.setItem('lastSentTime', new Date().getTime().toString());
-
-            // Zresetowanie formularza i wyświetlenie odpowiednich komunikatów
-            nameInput.value = '';
-            inputField.value = '';
-            messageSent.style.display = 'block';
-            messageFailed.style.display = 'none';
-        }
-    </script>
 </head>
 
 <body>
