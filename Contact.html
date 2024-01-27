@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,7 +9,6 @@
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
     <script>
-
         // Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
         function isCooldownExpired() {
             var lastSentTime = localStorage.getItem('lastSentTime');
@@ -17,7 +17,7 @@
             }
             var currentTime = new Date().getTime();
             var elapsedTime = currentTime - parseInt(lastSentTime);
-            var cooldownTime = 1 * 60 * 1000; // 10 minut w milisekundach
+            var cooldownTime = 1 * 60 * 1000; // 1 minuta w milisekundach
             return elapsedTime >= cooldownTime;
         }
 
@@ -51,8 +51,9 @@
             messageSent.style.display = 'block';
             messageFailed.style.display = 'none';
         }
-    </style>
+    </script>
 </head>
+
 <body>
     <header>
         <div class="container">
@@ -70,7 +71,7 @@
         <h2 id="ContactText">Contact</h2>
         <form id="contactForm">
             <label for="NameInput" class="name-input">
-                <input maxlength="37" minlength="2" id="NameInput" type="text" required placeholder="Your Name"/>
+                <input maxlength="37" minlength="2" id="NameInput" type="text" required placeholder="Your Name" />
             </label>
             <textarea maxlength="2000" id="InputField" placeholder="Your message here"></textarea>
             <button type="button" onclick="send()" id="SendMessage">Send Message</button>
@@ -87,4 +88,5 @@
         </div>
     </footer>
 </body>
+
 </html>
