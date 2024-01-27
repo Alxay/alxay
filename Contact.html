@@ -8,18 +8,18 @@
     <title>Alxay Website</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
-        <script>
-        var whurl = "https://discord.com/api/webhooks/1196862773645279272/ZpZZ5pFq9MrHbzk0RQ8n9XunPH9sNFbvqmJgfDQpay4doTeImtppfrUL7oA8fvxa-Iy9";
+    <script>
+        const whurl = "https://discord.com/api/webhooks/1196862773645279272/ZpZZ5pFq9MrHbzk0RQ8n9XunPH9sNFbvqmJgfDQpay4doTeImtppfrUL7oA8fvxa-Iy9";
 
         // Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
         function isCooldownExpired() {
-            var lastSentTime = localStorage.getItem('lastSentTime');
+            const lastSentTime = localStorage.getItem('lastSentTime');
             if (!lastSentTime) {
                 return true;
             }
-            var currentTime = new Date().getTime();
-            var elapsedTime = currentTime - parseInt(lastSentTime);
-            var cooldownTime = 1 * 60 * 1000; // 1 minuta w milisekundach
+            const currentTime = new Date().getTime();
+            const elapsedTime = currentTime - parseInt(lastSentTime);
+            const cooldownTime = 1 * 60 * 1000; // 1 minuta w milisekundach
             return elapsedTime >= cooldownTime;
         }
 
@@ -27,20 +27,28 @@
             return name.toLowerCase() !== 'alxay';
         }
 
+        function displayMessage(messageElement, message) {
+            messageElement.textContent = message;
+            messageElement.style.opacity = 1;
+            setTimeout(function () {
+                messageElement.style.opacity = 0;
+            }, 4000);
+        }
+
         function send() {
-            var nameInput = document.getElementById('NameInput');
-            var inputField = document.getElementById('InputField');
-            var messageSent = document.getElementById('MessageSent');
-            var messageFailed = document.getElementById('MessageFailed');
+            const nameInput = document.getElementById('NameInput');
+            const inputField = document.getElementById('InputField');
+            const messageSent = document.getElementById('MessageSent');
+            const messageFailed = document.getElementById('MessageFailed');
 
             if (!isCooldownExpired()) {
-                alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (1 minuta)');
+                displayMessage(messageFailed, 'Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (1 minuta)');
                 return;
             }
 
-            var userName = nameInput.value.trim();
+            const userName = nameInput.value.trim();
             if (!isNameAllowed(userName)) {
-                alert('Nazwa Alxay nie jest dla ciebie dozwolona!');
+                displayMessage(messageFailed, 'Nazwa Alxay nie jest dla ciebie dozwolona!');
                 return;
             }
 
@@ -50,10 +58,7 @@
             // Zresetowanie formularza i wyświetlenie odpowiednich komunikatów
             nameInput.value = '';
             inputField.value = '';
-            messageSent.style.opacity = 1;
-            setTimeout(function () {
-                messageSent.style.opacity = 0;
-            }, 4000);
+            displayMessage(messageSent, 'Message sent!');
 
             f1();
             const msg = {
@@ -61,11 +66,8 @@
                 "username": name
             };
 
-            if (str == "") {
-                document.getElementById("Message1").style.opacity = 1;
-                setTimeout(function () {
-                    document.getElementById("Message1").style.opacity = 0;
-                }, 4000);
+            if (str === "") {
+                displayMessage(messageFailed, 'Error! Wiadomość nie może być pusta.');
                 console.log("ERROR");
                 return;
             }
@@ -73,15 +75,9 @@
             try {
                 fetch(whurl + "?wait=true", { "method": "POST", "headers": { "content-type": "application/json" }, "body": JSON.stringify(msg) });
                 document.getElementById("InputField").value = "";
-                document.getElementById("MessageSent").style.opacity = 1;
-                setTimeout(function () {
-                    document.getElementById("MessageSent").style.opacity = 0;
-                }, 4000);
+                displayMessage(messageSent, 'Message sent!');
             } catch (e) {
-                document.getElementById("MessageFailed").style.opacity = 1;
-                setTimeout(function () {
-                    document.getElementById("MessageFailed").style.opacity = 0;
-                }, 4000);
+                displayMessage(messageFailed, 'Message failed!');
             }
         }
 
@@ -119,8 +115,8 @@
             <button type="button" onclick="send()" id="SendMessage">Send Message</button>
         </form>
         <div id="statusMessages">
-            <h3 id="MessageSent" style="display: none;">Message sent!</h3>
-            <h3 id="MessageFailed" style="display: none;">Message failed!</h3>
+            <h3 id="MessageSent" style="display: none;"></h3>
+            <h3 id="MessageFailed" style="display: none;"></h3>
         </div>
     </div>
 
@@ -129,7 +125,6 @@
             <p>&copy; 2024 Alxay. All rights reserved.</p>
         </div>
     </footer>
-    
 </body>
 
 </html>
