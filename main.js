@@ -12,46 +12,6 @@ Make sure to hide this link using https://javascriptobfuscator.com/Javascript-Ob
 if someone takes this link they can send messages to you with this webhook so make sure to
 hide this link!
 */
-whurl = "https://discord.com/api/webhooks/1196862773645279272/ZpZZ5pFq9MrHbzk0RQ8n9XunPH9sNFbvqmJgfDQpay4doTeImtppfrUL7oA8fvxa-Iy9"
-var str= "";
-var name= "";
-function f1(){
-    name = document.getElementById("NameInput").value;
-    str = document.getElementById("InputField").value;
-    console.log(document.getElementById("InputField").value)
-}
-function send(){
-    f1();
-    const msg = {
-        "content": str,
-        "username": name
-    };
-    console.log(msg)
-    if(str == ""){
-        document.getElementById("Message1").style.opacity = 1; 
-        setTimeout(function(){
-            document.getElementById("Message1").style.opacity = 0;
-        }, 4000)
-        console.log("ERROR")
-        return;
-    }
-    try{
-        fetch(whurl + "?wait=true", {"method":"POST", "headers": {"content-type": "application/json"}, "body": JSON.stringify(msg)});
-        document.getElementById("InputField").value = "";
-        document.getElementById("MessageSent").style.opacity = 1;
-        setTimeout(function(){
-            document.getElementById("MessageSent").style.opacity = 0;
-        }, 4000)
-
-    } catch(e){
-        document.getElementById("MessageFailed").style.opacity = 1;  
-        
-        setTimeout(function(){
-            document.getElementById("MessageFailed").style.opacity = 0;
-        }, 4000)
-    }
-
-} 
     
         // Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
         function isCooldownExpired() {
@@ -95,4 +55,45 @@ function send(){
             messageSent.style.display = 'block';
             messageFailed.style.display = 'none';
         }
+
+whurl = "https://discord.com/api/webhooks/1196862773645279272/ZpZZ5pFq9MrHbzk0RQ8n9XunPH9sNFbvqmJgfDQpay4doTeImtppfrUL7oA8fvxa-Iy9"
+var str= "";
+var name= "";
+function f1(){
+    name = document.getElementById("NameInput").value;
+    str = document.getElementById("InputField").value;
+    console.log(document.getElementById("InputField").value)
+}
+function send(){
+    f1();
+    const msg = {
+        "content": str,
+        "username": name
+    };
+    console.log(msg)
+    if(str == ""){
+        document.getElementById("Message1").style.opacity = 1; 
+        setTimeout(function(){
+            document.getElementById("Message1").style.opacity = 0;
+        }, 4000)
+        console.log("ERROR")
+        return;
+    }
+    try{
+        fetch(whurl + "?wait=true", {"method":"POST", "headers": {"content-type": "application/json"}, "body": JSON.stringify(msg)});
+        document.getElementById("InputField").value = "";
+        document.getElementById("MessageSent").style.opacity = 1;
+        setTimeout(function(){
+            document.getElementById("MessageSent").style.opacity = 0;
+        }, 4000)
+
+    } catch(e){
+        document.getElementById("MessageFailed").style.opacity = 1;  
+        
+        setTimeout(function(){
+            document.getElementById("MessageFailed").style.opacity = 0;
+        }, 4000)
+    }
+
+} 
     
