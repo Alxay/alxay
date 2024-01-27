@@ -8,43 +8,7 @@
     <title>Alxay Website</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
-</head>
-
-<body>
-    <header>
-        <div class="container">
-            <h1>Alxay Website</h1>
-            <nav>
-                <a href="index.html">Home</a>
-                <a href="#">About</a>
-                <a href="#">Services</a>
-                <a href="contact.html">Contact</a>
-            </nav>
-        </div>
-    </header>
-
-    <div class="container contact-section">
-        <h2 id="ContactText">Contact</h2>
-        <form id="contactForm">
-            <label for="NameInput" class="name-input">
-                <input maxlength="37" minlength="2" id="NameInput" type="text" required placeholder="Your Name" />
-            </label>
-            <textarea maxlength="2000" id="InputField" placeholder="Your message here"></textarea>
-            <button type="button" onclick="send()" id="SendMessage">Send Message</button>
-        </form>
-        <div id="statusMessages">
-            <h3 id="MessageSent" style="display: none;">Message sent!</h3>
-            <h3 id="MessageFailed" style="display: none;">Message failed!</h3>
-        </div>
-    </div>
-
-    <footer>
-        <div class="container">
-            <p>&copy; 2024 Alxay. All rights reserved.</p>
-        </div>
-    </footer>
-
-    <script>
+        <script>
         var whurl = "https://discord.com/api/webhooks/1196862773645279272/ZpZZ5pFq9MrHbzk0RQ8n9XunPH9sNFbvqmJgfDQpay4doTeImtppfrUL7oA8fvxa-Iy9";
 
         // Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
@@ -130,6 +94,42 @@
             console.log(document.getElementById("InputField").value);
         }
     </script>
+</head>
+
+<body>
+    <header>
+        <div class="container">
+            <h1>Alxay Website</h1>
+            <nav>
+                <a href="index.html">Home</a>
+                <a href="#">About</a>
+                <a href="#">Services</a>
+                <a href="contact.html">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="container contact-section">
+        <h2 id="ContactText">Contact</h2>
+        <form id="contactForm">
+            <label for="NameInput" class="name-input">
+                <input maxlength="37" minlength="2" id="NameInput" type="text" required placeholder="Your Name" />
+            </label>
+            <textarea maxlength="2000" id="InputField" placeholder="Your message here"></textarea>
+            <button type="button" onclick="send()" id="SendMessage">Send Message</button>
+        </form>
+        <div id="statusMessages">
+            <h3 id="MessageSent" style="display: none;">Message sent!</h3>
+            <h3 id="MessageFailed" style="display: none;">Message failed!</h3>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container">
+            <p>&copy; 2024 Alxay. All rights reserved.</p>
+        </div>
+    </footer>
+    
 </body>
 
 </html>
