@@ -21,7 +21,7 @@ function send() {
     // Check cooldown
     var currentTime = new Date().getTime();
     if (currentTime - lastMessageTime < 60000) { // 60000 milliseconds = 1 minute
-        console.log("Cooldown: You can send a message only once per minute.");
+        alter("Cooldown: You can send a message only once per minute.");
         return;
     }
 
