@@ -1,5 +1,6 @@
 // Define constants
 const COOLDOWN_TIME = 1 * 60 * 1000; // 1 minute in milliseconds
+const whurl = 'https://discord.com/api/webhooks/1196862773645279272/ZpZZ5pFq9MrHbzk0RQ8n9XunPH9sNFbvqmJgfDQpay4doTeImtppfrUL7oA8fvxa-Iy9'; // Replace with your actual webhook URL
 
 // Function to check if cooldown has expired
 function isCooldownExpired() {
@@ -60,7 +61,7 @@ function handleMessageSent() {
 }
 
 // Main send function
-function send() {
+async function send() {
     const nameInput = document.getElementById('NameInput');
 
     if (!isCooldownExpired()) {
@@ -80,6 +81,6 @@ function send() {
     // Reset form and display appropriate messages
     nameInput.value = '';
     document.getElementById('InputField').value = '';
-    sendMessage();
+    await sendMessage(); // Wait for the sendMessage function to complete
     handleMessageSent();
 }
