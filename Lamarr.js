@@ -18,6 +18,9 @@ enemyImage.src = 'image-removebg-preview.png';
 
 let mouseDown = false;
 
+let round = 0;
+let score = 0;
+
 function drawPlayer() {
     ctx.fillStyle = player.color;
     ctx.fillRect(player.x, player.y, player.width, player.height);
@@ -34,6 +37,12 @@ function drawEnemies() {
     for (let enemy of enemies) {
         ctx.drawImage(enemyImage, enemy.x, enemy.y, enemy.width, enemy.height);
     }
+}
+
+function drawScore() {
+    ctx.fillStyle = "white";
+    ctx.font = "20px Arial";
+    ctx.fillText("Score: " + score, 10, 30);
 }
 
 function update() {
@@ -69,8 +78,9 @@ function update() {
         // Check for bullet-enemy collisions
         for (let enemy of enemies) {
             if (collision(bullet, enemy)) {
-                // Handle collision, e.g., remove enemy
+                // Handle collision, e.g., remove enemy and increment score
                 enemies.splice(enemies.indexOf(enemy), 1);
+                score++;
             }
         }
     }
@@ -86,6 +96,7 @@ function draw() {
     drawPlayer();
     drawBullets();
     drawEnemies();
+    drawScore();
 }
 
 function gameLoop() {
@@ -134,7 +145,27 @@ function startGame() {
     canvas.style.display = 'block';
 
     // Initialize enemies
-    for (let i = 0; i < 5; i++) {
+    spawnEnemies();
+
+    // Start the game loop
+    gameLoop();
+
+    // Set up a timer to respawn enemies every second
+    setInterval(spawnEnemies, 1000);
+}
+
+function spawnEnemies() {
+    // Increment the round
+    round++;
+
+    // Update the number of enemies based on the round
+    const numEnemies = round + 1;
+
+    // Clear existing enemies
+    enemies = [];
+
+    // Spawn new enemies
+    for (let i = 0; i < numEnemies; i++) {
         enemies.push({
             x: Math.random() * (canvas.width - 20),
             y: Math.random() * (canvas.height - 20),
@@ -142,9 +173,6 @@ function startGame() {
             height: 20
         });
     }
-
-    // Start the game loop
-    gameLoop();
 }
 
 function collision(rect1, rect2) {
