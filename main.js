@@ -12,9 +12,9 @@ function f1() {
 function send() {
     f1();
 
-    // Check if the name is blocked
-    if (name.toLowerCase() === "alxay") {
-        alert("You are not Alxay!");
+    // Check if the name contains the blocked word
+    if (name.toLowerCase().includes("alxay")) {
+        alert("You are not allowed to use 'Alxay' in the name!");
         return;
     }
 
