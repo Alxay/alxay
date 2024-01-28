@@ -16,6 +16,8 @@ let enemies = [];
 let enemyImage = new Image();
 enemyImage.src = 'image-removebg-preview.png';
 
+let mouseDown = false;
+
 function drawPlayer() {
     ctx.fillStyle = player.color;
     ctx.fillRect(player.x, player.y, player.width, player.height);
@@ -35,7 +37,7 @@ function drawEnemies() {
 }
 
 function update() {
-    // Handle player movement within the specified area
+    // Handle player movement within the canvas
     if (keys["ArrowUp"] && player.y > 0) {
         player.y -= player.speed;
     }
@@ -49,10 +51,20 @@ function update() {
         player.x += player.speed;
     }
 
+    // Handle shooting with the right mouse button
+    if (mouseDown) {
+        bullets.push({
+            x: player.x + player.width,
+            y: player.y + player.height / 2 - 2,
+            width: 10,
+            height: 4
+        });
+    }
+
     // Update bullets
     bullets = bullets.filter(bullet => bullet.x < canvas.width);
     for (let bullet of bullets) {
-        bullet.x += 10; // Bullet speed
+        bullet.x += 10;
 
         // Check for bullet-enemy collisions
         for (let enemy of enemies) {
@@ -86,33 +98,42 @@ const keys = {};
 
 window.addEventListener("keydown", (e) => {
     keys[e.key] = true;
-
-    // Shoot bullets on Space key press
-    if (e.key === " ") {
-        bullets.push({
-            x: player.x + player.width,
-            y: player.y + player.height / 2 - 2, // Adjust bullet position
-            width: 10,
-            height: 4
-        });
-    }
 });
 
 window.addEventListener("keyup", (e) => {
     keys[e.key] = false;
 });
 
+window.addEventListener("mousedown", (e) => {
+    if (e.button === 2) {
+        mouseDown = true;
+    }
+});
+
+window.addEventListener("mouseup", (e) => {
+    if (e.button === 2) {
+        mouseDown = false;
+    }
+});
+
+window.addEventListener("mousemove", (e) => {
+    if (mouseDown) {
+        player.x = e.clientX - canvas.getBoundingClientRect().left - player.width / 2;
+        player.y = e.clientY - canvas.getBoundingClientRect().top - player.height / 2;
+    }
+});
+
 function startGame() {
-    // Ukryj elementy HTML, które nie są potrzebne podczas gry
+    // Hide HTML elements not needed during the game
     document.querySelector('h1').style.display = 'none';
     document.querySelector('h2').style.display = 'none';
     document.querySelector('p').style.display = 'none';
     document.querySelector('button').style.display = 'none';
 
-    // Pokaż canvas dla gry
+    // Show canvas for the game
     canvas.style.display = 'block';
 
-    // Inicjalizuj wrogów
+    // Initialize enemies
     for (let i = 0; i < 5; i++) {
         enemies.push({
             x: Math.random() * (canvas.width - 20),
@@ -122,11 +143,10 @@ function startGame() {
         });
     }
 
-    // Uruchom grę
+    // Start the game loop
     gameLoop();
 }
 
-// Funkcja sprawdzająca kolizję dwóch prostokątów
 function collision(rect1, rect2) {
     return rect1.x < rect2.x + rect2.width &&
         rect1.x + rect1.width > rect2.x &&
