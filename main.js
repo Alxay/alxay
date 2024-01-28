@@ -54,7 +54,7 @@ function send() {
 
         setTimeout(function () {
             // You may want to remove this line if you don't want to display a message after successful send
-            alert("Message Sent!");
+            // alert("Message Sent!"); // Duplicate alert removed
         }, 4000);
     } catch (e) {
         alert("Failed to send message!");
