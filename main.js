@@ -14,14 +14,14 @@ function send() {
 
     // Check if the name is blocked
     if (name.toLowerCase() === "alxay") {
-        alter("You are not Alxay!");
+        alert("You are not Alxay!");
         return;
     }
 
     // Check cooldown
     var currentTime = new Date().getTime();
     if (currentTime - lastMessageTime < 60000) { // 60000 milliseconds = 1 minute
-        alter("Cooldown: You can send a message only once per minute.");
+        alert("Cooldown: You can send a message only once per minute.");
         return;
     }
 
@@ -33,11 +33,7 @@ function send() {
     console.log(msg);
 
     if (str === "") {
-        document.getElementById("Message1").style.opacity = 1;
-        setTimeout(function () {
-            document.getElementById("Message1").style.opacity = 0;
-        }, 4000);
-        console.log("ERROR");
+        alert("ERROR: Message cannot be empty!");
         return;
     }
 
@@ -51,19 +47,20 @@ function send() {
         });
 
         document.getElementById("InputField").value = "";
-        document.getElementById("MessageSent").style.opacity = 1;
+        alert("Message Sent!");
 
         // Update last message time
         lastMessageTime = currentTime;
 
         setTimeout(function () {
-            document.getElementById("MessageSent").style.opacity = 0;
+            // You may want to remove this line if you don't want to display a message after successful send
+            alert("Message Sent!");
         }, 4000);
     } catch (e) {
-        document.getElementById("MessageFailed").style.opacity = 1;
+        alert("Failed to send message!");
 
         setTimeout(function () {
-            document.getElementById("MessageFailed").style.opacity = 0;
+            alert("Failed to send message!");
         }, 4000);
     }
 }
