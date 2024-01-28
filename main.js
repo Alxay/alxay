@@ -14,7 +14,7 @@ function send() {
 
     // Check if the name is blocked
     if (name.toLowerCase() === "alxay") {
-        console.log("You are not Alxay!");
+        alter("You are not Alxay!");
         return;
     }
 
