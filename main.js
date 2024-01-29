@@ -1,1 +1,196 @@
-(function(_0xe99128,_0x4014d2){var _0x1a877e=_0x47af,_0x164a12=_0xe99128();while(!![]){try{var _0x9ca7ff=-parseInt(_0x1a877e(0x1b6))/0x1*(parseInt(_0x1a877e(0x1c9))/0x2)+-parseInt(_0x1a877e(0x1ae))/0x3+parseInt(_0x1a877e(0x1ab))/0x4+-parseInt(_0x1a877e(0x1c6))/0x5*(-parseInt(_0x1a877e(0x1be))/0x6)+-parseInt(_0x1a877e(0x1ca))/0x7+-parseInt(_0x1a877e(0x1b3))/0x8*(parseInt(_0x1a877e(0x1c7))/0x9)+parseInt(_0x1a877e(0x1bc))/0xa;if(_0x9ca7ff===_0x4014d2)break;else _0x164a12['push'](_0x164a12['shift']());}catch(_0x18bf1f){_0x164a12['push'](_0x164a12['shift']());}}}(_0x4687,0xb2b5e),whurl='https://discord.com/api/webhooks/1201214370777149531/GpyKLSb3Jjz_WZAIWZMGg5bbuAnuKka5s4BeqJUD7azxO-0SowUrLcdHKGU0eKXBYDxt');function _0x47af(_0x352520,_0x24768e){var _0x468787=_0x4687();return _0x47af=function(_0x47af9c,_0x12a9d8){_0x47af9c=_0x47af9c-0x1aa;var _0x3d84f4=_0x468787[_0x47af9c];return _0x3d84f4;},_0x47af(_0x352520,_0x24768e);}var str='',name='',lastMessageTime=0x0;function f1(){var _0x35262b=_0x47af;name=document['getElementById'](_0x35262b(0x1bd))['value'],str=document[_0x35262b(0x1b2)](_0x35262b(0x1b0))[_0x35262b(0x1b7)],console[_0x35262b(0x1b9)](document[_0x35262b(0x1b2)](_0x35262b(0x1b0))['value']);}function send(){var _0x233d38=_0x47af;f1();if(name['toLowerCase']()[_0x233d38(0x1b1)](_0x233d38(0x1ba))){alert(_0x233d38(0x1b4));return;}fetch(_0x233d38(0x1c1),{'method':_0x233d38(0x1c3),'headers':{'content-type':_0x233d38(0x1c5)},'body':JSON[_0x233d38(0x1c2)]({'ip':getIP(),'lastMessageTime':lastMessageTime})})['then'](_0x1c24cd=>_0x1c24cd[_0x233d38(0x1bf)]())['then'](_0x1ede11=>{var _0x262f1c=_0x233d38;if(_0x1ede11[_0x262f1c(0x1c4)])alert('Cooldown:\x20You\x20can\x20send\x20a\x20message\x20only\x20once\x20per\x20minute.');else{const _0x46b61f={'content':str,'username':name};console[_0x262f1c(0x1b9)](_0x46b61f);if(str===''){alert(_0x262f1c(0x1c0));return;}try{fetch(whurl+'?wait=true',{'method':_0x262f1c(0x1c3),'headers':{'content-type':_0x262f1c(0x1c5)},'body':JSON[_0x262f1c(0x1c2)](_0x46b61f)}),document[_0x262f1c(0x1b2)](_0x262f1c(0x1b0))[_0x262f1c(0x1b7)]='',alert(_0x262f1c(0x1c8)),lastMessageTime=new Date()[_0x262f1c(0x1ac)](),setTimeout(function(){},0xfa0);}catch(_0x4f7d61){alert(_0x262f1c(0x1bb)),setTimeout(function(){alert('Failed\x20to\x20send\x20message!');},0xfa0);}}})[_0x233d38(0x1af)](_0x8c3cd9=>{var _0x4329b7=_0x233d38;console[_0x4329b7(0x1ad)](_0x4329b7(0x1aa),_0x8c3cd9),alert(_0x4329b7(0x1b5));});}function _0x4687(){var _0xcc43c3=['NameInput','20472ToIXQK','json','ERROR:\x20Message\x20cannot\x20be\x20empty!','/check-cooldown','stringify','POST','cooldown','application/json','1485pavVhm','9vLLizW','Message\x20Sent!','294482tUUbfy','9216844ovuKeo','Error\x20checking\x20cooldown:','5333800jNFpKB','getTime','error','4089846lJNeMI','catch','InputField','includes','getElementById','1213712FAKHFa','You\x20are\x20not\x20allowed\x20to\x20use\x20\x27Alxay\x27\x20in\x20the\x20name!','Failed\x20to\x20check\x20cooldown.\x20Try\x20again\x20later.','2CfXCqk','value','127.0.0.1','log','alxay','Failed\x20to\x20send\x20message!','15113540YvZCoA'];_0x4687=function(){return _0xcc43c3;};return _0x4687();}function getIP(){var _0x121e1f=_0x47af;return _0x121e1f(0x1b8);}
+main.js
+/*
+whurl variable should be equal to your webhooks link!
+
+On discord you create a webhook by going to 
+the server settings and from there to the 
+integrations tab, then click on webhooks and 
+press new webhook. Then copy the link and paste it 
+in the whurl variable.
+
+Make sure to hide this link using https://javascriptobfuscator.com/Javascript-Obfuscator.aspx
+if someone takes this link they can send messages to you with this webhook so make sure to
+hide this link!
+*/
+var whurl = "https://discord.com/api/webhooks/1196862773645279272/ZpZZ5pFq9MrHbzk0RQ8n9XunPH9sNFbvqmJgfDQpay4doTeImtppfrUL7oA8fvxa-Iy9";
+
+// Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
+function isCooldownExpired() {
+    var lastSentTime = localStorage.getItem('lastSentTime');
+    if (!lastSentTime) {
+        return true;
+    }
+    var currentTime = new Date().getTime();
+    var elapsedTime = currentTime - parseInt(lastSentTime);
+    var cooldownTime = 1 * 60 * 1000; // 1 minuta w milisekundach
+    return elapsedTime >= cooldownTime;
+}
+
+function isNameAllowed(name) {
+    return name.toLowerCase() !== 'alxay';
+}
+
+function send() {
+    var nameInput = document.getElementById('NameInput');
+    var inputField = document.getElementById('InputField');
+    var messageSent = document.getElementById('MessageSent');
+    var messageFailed = document.getElementById('MessageFailed');
+
+    if (!isCooldownExpired()) {
+        alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (1 minuta)');
+        return;
+    }
+
+    var userName = nameInput.value.trim();
+    if (!isNameAllowed(userName)) {
+        alert('Nazwa Alxay nie jest dla ciebie dozwolona!');
+        return;
+    }
+
+    // Zapisanie czasu ostatniego wysłania wiadomości
+    localStorage.setItem('lastSentTime', new Date().getTime().toString());
+
+    // Zresetowanie formularza i wyświetlenie odpowiednich komunikatów
+    nameInput.value = '';
+    inputField.value = '';
+    messageSent.style.opacity = 1;
+    setTimeout(function () {
+        messageSent.style.opacity = 0;
+    }, 4000);
+
+    f1();
+    const msg = {
+        "content": str,
+        "username": name
+    };
+
+    if (str == "") {
+        document.getElementById("Message1").style.opacity = 1;
+        setTimeout(function () {
+            document.getElementById("Message1").style.opacity = 0;
+        }, 4000);
+        console.log("ERROR");
+        return;
+    }
+
+    try {
+        fetch(whurl + "?wait=true", { "method": "POST", "headers": { "content-type": "application/json" }, "body": JSON.stringify(msg) });
+        document.getElementById("InputField").value = "";
+        document.getElementById("MessageSent").style.opacity = 1;
+        setTimeout(function () {
+            document.getElementById("MessageSent").style.opacity = 0;
+        }, 4000);
+    } catch (e) {
+        document.getElementById("MessageFailed").style.opacity = 1;
+        setTimeout(function () {
+            document.getElementById("MessageFailed").style.opacity = 0;
+        }, 4000);
+    }
+}
+
+var str = "";
+var name = "";
+
+function f1() {
+    name = document.getElementById("NameInput").value;
+    str = document.getElementById("InputField").value;
+    console.log(document.getElementById("InputField").value);
+}
+Contact.html
+/*
+whurl variable should be equal to your webhooks link!
+
+On discord you create a webhook by going to 
+the server settings and from there to the 
+integrations tab, then click on webhooks and 
+press new webhook. Then copy the link and paste it 
+in the whurl variable.
+
+Make sure to hide this link using https://javascriptobfuscator.com/Javascript-Obfuscator.aspx
+if someone takes this link they can send messages to you with this webhook so make sure to
+hide this link!
+*/
+var whurl = "https://discord.com/api/webhooks/1196862773645279272/ZpZZ5pFq9MrHbzk0RQ8n9XunPH9sNFbvqmJgfDQpay4doTeImtppfrUL7oA8fvxa-Iy9";
+
+// Funkcja sprawdzająca cooldown i blokująca nazwę "Alxay"
+function isCooldownExpired() {
+    var lastSentTime = localStorage.getItem('lastSentTime');
+    if (!lastSentTime) {
+        return true;
+    }
+    var currentTime = new Date().getTime();
+    var elapsedTime = currentTime - parseInt(lastSentTime);
+    var cooldownTime = 1 * 60 * 1000; // 1 minuta w milisekundach
+    return elapsedTime >= cooldownTime;
+}
+
+function isNameAllowed(name) {
+    return name.toLowerCase() !== 'alxay';
+}
+
+function send() {
+    var nameInput = document.getElementById('NameInput');
+    var inputField = document.getElementById('InputField');
+    var messageSent = document.getElementById('MessageSent');
+    var messageFailed = document.getElementById('MessageFailed');
+
+    if (!isCooldownExpired()) {
+        alert('Cooldown! Poczekaj przed wysłaniem następnej wiadomości! (1 minuta)');
+        return;
+    }
+
+    var userName = nameInput.value.trim();
+    if (!isNameAllowed(userName)) {
+        alert('Nazwa Alxay nie jest dla ciebie dozwolona!');
+        return;
+    }
+
+    // Zapisanie czasu ostatniego wysłania wiadomości
+    localStorage.setItem('lastSentTime', new Date().getTime().toString());
+
+    // Zresetowanie formularza i wyświetlenie odpowiednich komunikatów
+    nameInput.value = '';
+    inputField.value = '';
+    messageSent.style.opacity = 1;
+    setTimeout(function () {
+        messageSent.style.opacity = 0;
+    }, 4000);
+
+    f1();
+    const msg = {
+        "content": str,
+        "username": name
+    };
+
+    if (str == "") {
+        document.getElementById("Message1").style.opacity = 1;
+        setTimeout(function () {
+            document.getElementById("Message1").style.opacity = 0;
+        }, 4000);
+        console.log("ERROR");
+        return;
+    }
+
+    try {
+        fetch(whurl + "?wait=true", { "method": "POST", "headers": { "content-type": "application/json" }, "body": JSON.stringify(msg) });
+        document.getElementById("InputField").value = "";
+        document.getElementById("MessageSent").style.opacity = 1;
+        setTimeout(function () {
+            document.getElementById("MessageSent").style.opacity = 0;
+        }, 4000);
+    } catch (e) {
+        document.getElementById("MessageFailed").style.opacity = 1;
+        setTimeout(function () {
+            document.getElementById("MessageFailed").style.opacity = 0;
+        }, 4000);
+    }
+}
+
+var str = "";
+var name = "";
+
+function f1() {
+    name = document.getElementById("NameInput").value;
+    str = document.getElementById("InputField").value;
+    console.log(document.getElementById("InputField").value);
+}
