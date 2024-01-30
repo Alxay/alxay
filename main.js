@@ -23,19 +23,14 @@ function containsAttachment(text) {
 function send() {
     f1();
 
-    // Check for the prohibited word
-    if (name.toLowerCase().includes("alxay")) {
-        alert("You are not worthy to use 'alxay' in the name.");
-        return;
-    }
-    // Check for the prohibited word
-    if (str.toLowerCase().includes("alxay")) {
-        alert("You are not worthy to use 'alxay' in the name.");
+    // Check for the prohibited word in name or message
+    if (name.toLowerCase().includes("alxay") || str.toLowerCase().includes("alxay")) {
+        alert("You are not worthy to use 'alxay' in the name or message.");
         return;
     }
 
     // Check if username contains "@"
-    if (str.includes("@")) {
+    if (name.includes("@")) {
         alert("Username cannot contain '@'.");
         return;
     }
@@ -52,11 +47,16 @@ function send() {
         return;
     }
 
-    const currentTime = new Date().getTime();
-
     // Check if cooldown is active
+    const currentTime = new Date().getTime();
     if (currentTime - lastMessageTime < cooldownTime) {
         alert("Cooldown! Please wait before sending another message.");
+        return;
+    }
+
+    // Check if the message is empty
+    if (str.trim() === "") {
+        alert("Message cannot be empty.");
         return;
     }
 
@@ -66,15 +66,6 @@ function send() {
     };
 
     console.log(msg);
-
-    if (str === "") {
-        document.getElementById("Message1").style.opacity = 1;
-        setTimeout(function () {
-            document.getElementById("Message1").style.opacity = 0;
-        }, 4000);
-        console.log("ERROR");
-        return;
-    }
 
     try {
         fetch(whurl + "?wait=true", {
