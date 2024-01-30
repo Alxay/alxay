@@ -20,6 +20,11 @@ function send() {
         alert("You are not worthy to use 'alxay' in the name.");
         return;
     }
+     // Check if username contains "@"
+    if (str.includes("@")) {
+        alert("You can not use '@'.");
+        return;
+    }
 
     const currentTime = new Date().getTime();
 
