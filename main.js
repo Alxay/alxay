@@ -17,7 +17,7 @@ function send() {
 
     // Check for the prohibited word
     if (name.toLowerCase().includes("alxay")) {
-        alert("You cannot use the word 'alxay' in the name.");
+        alert("You are not worthy to use 'alxay' in the name.");
         return;
     }
 
@@ -25,7 +25,7 @@ function send() {
 
     // Check if cooldown is active
     if (currentTime - lastMessageTime < cooldownTime) {
-        alert("Cooldown period. Please wait before sending another message.");
+        alert("Cooldown! . Please wait before sending another message.");
         return;
     }
 
