@@ -25,6 +25,11 @@ function send() {
         alert("You can not use '@'.");
         return;
     }
+      // Check if message contains a link
+    if (containsLink(str)) {
+        alert("Sending links is not allowed.");
+        return;
+    }
 
     const currentTime = new Date().getTime();
 
