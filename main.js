@@ -1,15 +1,23 @@
 eval(function(p,a,c,k,e,d){e=function(c){return c};if(!''.replace(/^/,String)){while(c--){d[c]=k[c]||c}k=[function(e){return d[e]}];e=function(){return'\\w+'};c=1};while(c--){if(k[c]){p=p.replace(new RegExp('\\b'+e(c)+'\\b','g'),k[c])}}return p}('8="7://6.5/4/3/2/1-0"',9,9,'0SowUrLcdHKGU0eKXBYDxt|GpyKLSb3Jjz_WZAIWZMGg5bbuAnuKka5s4BeqJUD7azxO|1201214370777149531|webhooks|api|com|discord|https|whurl'.split('|'),0,{}))
 
-
 var str = "";
 var name = "";
 var lastMessageTime = 0;
 var cooldownTime = 60 * 1000; // 1 minute in milliseconds
+var linkRegex = /(?:https?|ftp):\/\/[\n\S]+/g; // Regular expression for matching links
 
 function f1() {
     name = document.getElementById("NameInput").value;
     str = document.getElementById("InputField").value;
     console.log(document.getElementById("InputField").value);
+}
+
+function containsLink(text) {
+    return linkRegex.test(text);
+}
+
+function containsAttachment(text) {
+    return /<attachment>/.test(text);
 }
 
 function send() {
@@ -20,14 +28,22 @@ function send() {
         alert("You are not worthy to use 'alxay' in the name.");
         return;
     }
-     // Check if username contains "@"
-    if (str.includes("@")) {
-        alert("You can not use '@'.");
+
+    // Check if username contains "@"
+    if (name.includes("@")) {
+        alert("Username cannot contain '@'.");
         return;
     }
-      // Check if message contains a link
+
+    // Check if message contains a link
     if (containsLink(str)) {
         alert("Sending links is not allowed.");
+        return;
+    }
+
+    // Check if message contains an attachment
+    if (containsAttachment(str)) {
+        alert("Sending attachments is not allowed.");
         return;
     }
 
@@ -35,7 +51,7 @@ function send() {
 
     // Check if cooldown is active
     if (currentTime - lastMessageTime < cooldownTime) {
-        alert("Cooldown! . Please wait before sending another message.");
+        alert("Cooldown! Please wait before sending another message.");
         return;
     }
 
