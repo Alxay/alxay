@@ -28,9 +28,14 @@ function send() {
         alert("You are not worthy to use 'alxay' in the name.");
         return;
     }
+    // Check for the prohibited word
+    if (str.toLowerCase().includes("alxay")) {
+        alert("You are not worthy to use 'alxay' in the name.");
+        return;
+    }
 
     // Check if username contains "@"
-    if (name.includes("@")) {
+    if (str.includes("@")) {
         alert("Username cannot contain '@'.");
         return;
     }
