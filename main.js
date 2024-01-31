@@ -28,13 +28,18 @@ function send() {
     }
 
     // Check if username contains "@"
-    if (name.includes("@")) {
-        alert("Username cannot contain '@'.");
+    if (str.includes("@")) {
+        alert("Message cannot contain '@'.");
         return;
     }
 
     // Check if message contains a link
     if (containsLink(str)) {
+        alert("Sending links is not allowed.");
+        return;
+    }
+        // Check if message contains a link
+    if (containsLink(name)) {
         alert("Sending links is not allowed.");
         return;
     }
@@ -49,12 +54,6 @@ function send() {
     const currentTime = new Date().getTime();
     if (currentTime - lastMessageTime < cooldownTime) {
         alert("Cooldown! Please wait before sending another message.");
-        return;
-    }
-
-    // Check if the message is empty
-    if (str.trim() === "") {
-        alert("Message cannot be empty.");
         return;
     }
 
