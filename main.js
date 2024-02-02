@@ -34,6 +34,11 @@ function send() {
     }
 
     // Check if username contains "@"
+    if (str.includes("@")) {
+        alert("Username cannot contain '@'.");
+        allowSending = false;
+    }
+      // Check if username contains "@"
     if (name.includes("@")) {
         alert("Username cannot contain '@'.");
         allowSending = false;
