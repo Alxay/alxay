@@ -6,7 +6,19 @@ var lastMessageTime = 0;
 var cooldownTime = 60 * 1000; // 1 minute in milliseconds
 var linkRegex = /(?:https?|ftp):\/\/[\n\S]+/g; // Regular expression for matching links
 
-// ... (previous code)
+function f1() {
+    name = document.getElementById("NameInput").value;
+    str = document.getElementById("InputField").value;
+    console.log(document.getElementById("InputField").value);
+}
+
+function containsLink(text) {
+    return linkRegex.test(text);
+}
+
+function containsAttachment(text) {
+    return /<attachment>/.test(text);
+}
 
 function send() {
     f1();
@@ -79,4 +91,3 @@ function send() {
         }, 4000);
     }
 }
-
