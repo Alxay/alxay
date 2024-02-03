@@ -37,13 +37,12 @@ function send() {
         alert("Nie tym razem");
         allowSending = false;
     }
-    // Check for special characters in the name field
-    if (/[^a-zA-Z0-9]/.test(name)) {
-        alert("Name cannot contain special characters. Please use only letters and numbers.");
+// Check for specific special characters in the name field
+    if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(name)) {
+        alert("Name cannot contain special characters such as !@#$%^&*()_+{}[]:;<>,.?~/-. Please use only letters and numbers.");
         allowSending = false;
     }
 }
-
     // Check if username contains "@"
     if (str.includes("@") || name.includes("@")) {
         alert("Username cannot contain '@'.");
