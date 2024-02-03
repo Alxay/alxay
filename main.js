@@ -14,6 +14,12 @@ function f1() {
 
     // Reset the allowSending flag for each user input
     allowSending = true;
+
+    // Check for specific special characters in the name field
+    if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(name)) {
+        alert("Name cannot contain special characters. Please use only letters and numbers.");
+        allowSending = false;
+    }
 }
 
 function containsLink(text) {
@@ -32,17 +38,13 @@ function send() {
         alert("You are not worthy to use 'alxay' in the name or message.");
         allowSending = false;
     }
-        // Check for the prohibited word in name or message
+
+    // Check for the prohibited word in name or message
     if (name.toLowerCase().includes("aixay") || str.toLowerCase().includes("alxay")) {
         alert("Nie tym razem");
         allowSending = false;
     }
-// Check for specific special characters in the name field
-    if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(name)) {
-        alert("Name cannot contain special characters such as !@#$%^&*()_+{}[]:;<>,.?~/-. Please use only letters and numbers.");
-        allowSending = false;
-    }
-}
+
     // Check if username contains "@"
     if (str.includes("@") || name.includes("@")) {
         alert("Username cannot contain '@'.");
