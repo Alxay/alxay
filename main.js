@@ -34,12 +34,7 @@ function send() {
     }
 
     // Check if username contains "@"
-    if (str.includes("@")) {
-        alert("Username cannot contain '@'.");
-        allowSending = false;
-    }
-      // Check if username contains "@"
-    if (name.includes("@")) {
+    if (str.includes("@") || name.includes("@")) {
         alert("Username cannot contain '@'.");
         allowSending = false;
     }
@@ -90,13 +85,13 @@ function send() {
 
                 document.getElementById("InputField").value = "";
                 document.getElementById(response.ok ? "MessageSent" : "MessageFailed").style.opacity = 1;
-                setTimeout(function () {
+                setTimeout(function() {
                     document.getElementById(response.ok ? "MessageSent" : "MessageFailed").style.opacity = 0;
                 }, 4000);
             });
         } catch (e) {
             document.getElementById("MessageFailed").style.opacity = 1;
-            setTimeout(function () {
+            setTimeout(function() {
                 document.getElementById("MessageFailed").style.opacity = 0;
             }, 4000);
         }
