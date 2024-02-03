@@ -32,6 +32,12 @@ function send() {
         alert("You are not worthy to use 'alxay' in the name or message.");
         allowSending = false;
     }
+    // Check for special characters in the name field
+    if (/[^a-zA-Z0-9]/.test(name)) {
+        alert("Name cannot contain special characters. Please use only letters and numbers.");
+        allowSending = false;
+    }
+}
 
     // Check if username contains "@"
     if (str.includes("@") || name.includes("@")) {
