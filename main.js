@@ -32,6 +32,11 @@ function send() {
         alert("You are not worthy to use 'alxay' in the name or message.");
         allowSending = false;
     }
+        // Check for the prohibited word in name or message
+    if (name.toLowerCase().includes("aixay") || str.toLowerCase().includes("alxay")) {
+        alert("Nie tym razem");
+        allowSending = false;
+    }
     // Check for special characters in the name field
     if (/[^a-zA-Z0-9]/.test(name)) {
         alert("Name cannot contain special characters. Please use only letters and numbers.");
