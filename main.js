@@ -7,8 +7,8 @@ var cooldownTime = 60 * 1000; // 1 minute in milliseconds
 var linkRegex = /(?:https?|ftp):\/\/[\n\S]+/g; // Regular expression for matching links
 var allowSending = true; // Variable to track whether the message can be sent
 
-function f1() {
-    name = document.getElementById("NameInput").value;
+function send() {
+      name = document.getElementById("NameInput").value;
     str = document.getElementById("InputField").value;
     console.log(document.getElementById("InputField").value);
 
@@ -28,10 +28,7 @@ function containsLink(text) {
 
 function containsAttachment(text) {
     return /<attachment>/.test(text);
-}
 
-function send() {
-    f1();
 
     // Check for the prohibited word in name or message
     if (name.toLowerCase().includes("alxay") || str.toLowerCase().includes("alxay")) {
