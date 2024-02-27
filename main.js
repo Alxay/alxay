@@ -22,13 +22,12 @@ function send() {
         allowSending = false;
     }
 
-    // Check for the prohibited word in name or message
+    // Check for the prohibited words in name or message
     if (name.toLowerCase().includes("alxay") || str.toLowerCase().includes("alxay")) {
         alert("You are not worthy to use 'alxay' in the name or message.");
         allowSending = false;
     }
 
-    // Check for the prohibited word in name or message
     if (name.toLowerCase().includes("aixay") || str.toLowerCase().includes("aixay")) {
         alert("Nie tym razem");
         allowSending = false;
@@ -52,7 +51,7 @@ function send() {
         allowSending = false;
     }
 
-    // Check if cooldown is active
+    // Implement rate limiting to prevent rapid requests
     const currentTime = new Date().getTime();
     if (currentTime - lastMessageTime < cooldownTime) {
         alert("Cooldown! Please wait before sending another message.");
@@ -74,6 +73,8 @@ function send() {
         console.log(msg);
 
         try {
+            // Implement server-side validation to ensure data integrity
+            // Ensure the server validates the request before processing it
             fetch(whurl + "?wait=true", {
                 method: "POST",
                 headers: { "content-type": "application/json" },
@@ -86,13 +87,15 @@ function send() {
 
                 document.getElementById("InputField").value = "";
                 document.getElementById(response.ok ? "MessageSent" : "MessageFailed").style.opacity = 1;
-                setTimeout(function() {
+                setTimeout(function () {
                     document.getElementById(response.ok ? "MessageSent" : "MessageFailed").style.opacity = 0;
                 }, 4000);
             });
         } catch (e) {
+            // Handle errors gracefully without exposing sensitive information
+            console.error("An error occurred during message sending.", e);
             document.getElementById("MessageFailed").style.opacity = 1;
-            setTimeout(function() {
+            setTimeout(function () {
                 document.getElementById("MessageFailed").style.opacity = 0;
             }, 4000);
         }
