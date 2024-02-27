@@ -6,29 +6,13 @@ var lastMessageTime = 0;
 var cooldownTime = 60 * 1000; // 1 minute in milliseconds
 var linkRegex = /(?:https?|ftp):\/\/[\n\S]+/g; // Regular expression for matching links
 var allowSending = true; // Variable to track whether the message can be sent
+
 name = document.getElementById("NameInput").value;
-    str = document.getElementById("InputField").value;
-    console.log(document.getElementById("InputField").value);
+str = document.getElementById("InputField").value;
+
+console.log(document.getElementById("InputField").value);
 
 function send() {
-
-    // Reset the allowSending flag for each user input
-    allowSending = false;
-
-    // Check for specific special characters in the name field
-    if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(name)) {
-        alert("Name cannot contain special characters. Please use only letters and numbers.");
-        allowSending = false;
-    }
-}
-
-function containsLink(text) {
-    return linkRegex.test(text);
-}
-
-function containsAttachment(text) {
-    return /<attachment>/.test(text);
-
     // Reset the allowSending flag for each user input
     allowSending = true;
 
@@ -37,15 +21,6 @@ function containsAttachment(text) {
         alert("Name cannot contain special characters. Please use only letters and numbers.");
         allowSending = false;
     }
-}
-
-function containsLink(text) {
-    return linkRegex.test(text);
-}
-
-function containsAttachment(text) {
-    return /<attachment>/.test(text);
-
 
     // Check for the prohibited word in name or message
     if (name.toLowerCase().includes("alxay") || str.toLowerCase().includes("alxay")) {
@@ -54,7 +29,7 @@ function containsAttachment(text) {
     }
 
     // Check for the prohibited word in name or message
-    if (name.toLowerCase().includes("aixay") || str.toLowerCase().includes("alxay")) {
+    if (name.toLowerCase().includes("aixay") || str.toLowerCase().includes("aixay")) {
         alert("Nie tym razem");
         allowSending = false;
     }
@@ -122,4 +97,12 @@ function containsAttachment(text) {
             }, 4000);
         }
     }
+}
+
+function containsLink(text) {
+    return linkRegex.test(text);
+}
+
+function containsAttachment(text) {
+    return /<attachment>/.test(text);
 }
