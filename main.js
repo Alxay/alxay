@@ -1,4 +1,4 @@
-var whurl = secret.WEBHOOK;
+var whurl = WEBHOOK;
 var str = "";
 var name = "";
 var lastMessageTime = 0;
