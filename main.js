@@ -1,10 +1,12 @@
-var whurl = "{{secrets.webhook}}";
 var str = "";
 var name = "";
 var lastMessageTime = 0;
 var cooldownTime = 60 * 1000; // 1 minute in milliseconds
 var linkRegex = /(?:https?|ftp):\/\/[\n\S]+/g; // Regular expression for matching links
 var allowSending = true; // Variable to track whether the message can be sent
+
+// Zdekoduj wartość webhooku przed użyciem
+var whurl = atob("{{secrets.webhook}}");
 
 function f1() {
     name = document.getElementById("NameInput").value;
