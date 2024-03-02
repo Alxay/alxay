@@ -4,7 +4,7 @@ var lastMessageTime = 0;
 var cooldownTime = 60 * 1000; // 1 minute in milliseconds
 var linkRegex = /(?:https?|ftp):\/\/[\n\S]+/g; // Regular expression for matching links
 var allowSending = true; // Variable to track whether the message can be sent
-var whurl = ${{secrets.webhook}};
+
 
 function f1() {
     name = document.getElementById("NameInput").value;
