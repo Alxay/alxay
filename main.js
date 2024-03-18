@@ -1,4 +1,4 @@
-var whurl = 
+var whurl = "https://discord.com/api/webhooks/1219317273324425247/WlbVgBt6H9OsnPfluSArUUG-2UqJEPxebokNFGpr4Pgca8foegDZ0Z_2XU37Xxb3ANVl";
 var str = "";
 var name = "";
 var lastMessageTime = 0;
