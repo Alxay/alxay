@@ -1,1 +1,116 @@
-var _0x5f350f=_0x158a;(function(_0x4abb1c,_0x1aa6c5){var _0x30758f=_0x158a,_0x28d8ee=_0x4abb1c();while(!![]){try{var _0x3398d1=-parseInt(_0x30758f(0x19c))/(0x89f+0x211+-0xaaf)+parseInt(_0x30758f(0x14d))/(0x15db+-0x1c*0xe5+0x333)+parseInt(_0x30758f(0x1a3))/(-0x2564+0xf7+0x2c*0xd4)*(-parseInt(_0x30758f(0x168))/(0x1407*-0x1+0xa6e+-0x1*-0x99d))+parseInt(_0x30758f(0x19e))/(-0x25f9+0x7*0x557+0x9d)*(-parseInt(_0x30758f(0x159))/(-0x1*0x315+0x21*-0x2d+0x8e8))+-parseInt(_0x30758f(0x188))/(0x6*-0x2d1+0x1eac+0x17*-0x99)*(parseInt(_0x30758f(0x15c))/(0xeb7+-0x4b8+-0x9f7))+parseInt(_0x30758f(0x16d))/(0x16a2+-0x18f7+0x2*0x12f)+parseInt(_0x30758f(0x1a8))/(0x8f*0xb+-0xa41+0x426)*(parseInt(_0x30758f(0x14a))/(0x1*0xdfb+-0x1*-0xe20+-0x1c10));if(_0x3398d1===_0x1aa6c5)break;else _0x28d8ee['push'](_0x28d8ee['shift']());}catch(_0x4afd02){_0x28d8ee['push'](_0x28d8ee['shift']());}}}(_0x4b8a,-0x4272+0x158bb7+-0x7b41e));var whurl=_0x5f350f(0x17b)+_0x5f350f(0x19f)+_0x5f350f(0x185)+_0x5f350f(0x148)+_0x5f350f(0x14b)+_0x5f350f(0x134)+_0x5f350f(0x158)+_0x5f350f(0x1aa)+_0x5f350f(0x146)+_0x5f350f(0x141)+_0x5f350f(0x145)+_0x5f350f(0x172)+'I',str='',name='',lastMessageTime=-0x5d4+-0x24*-0x110+-0x64*0x53,cooldownTime=(-0x18a7+0xa*0x36b+0x319*-0x3)*(0x2*0xd9b+0x1*0x1a2f+-0x317d),linkRegex=/(?:https?|ftp):\/\/[\n\S]+/g,allowSending=!![];function _0x158a(_0x54bc12,_0x4b5b93){var _0x19266a=_0x4b8a();return _0x158a=function(_0x25f0d1,_0x2df6e0){_0x25f0d1=_0x25f0d1-(-0x683*0x2+0x1957+-0xb22);var _0x121b1f=_0x19266a[_0x25f0d1];return _0x121b1f;},_0x158a(_0x54bc12,_0x4b5b93);}function _0x4b8a(){var _0xfab52f=['ending\x20ano','value','13403934GiiGMs','then','is\x20predefi','?wait=true','t\x20before\x20s','EfhQJUXWI6','owed.','special\x20ch','Myzcp','akljG','pty.','tachments\x20','zem','iAScm','https://di','eFPcD','led','kFJyB','nGbfP','ain\x20\x27@\x27.','getElement','Value2','Message\x20ca','Value1','api/webhoo','ther\x20messa','SHtPD','5816867MbDlXh','style','Please\x20wai','Bsvbu','t\x20worthy\x20t','opacity','trim','MessageFai','3|0|1|2|4','nnot\x20be\x20em','Sending\x20th','ge.','aracters.\x20','GBjfb','QhkSx','vKKYt','VMDhL','cHaeO','essage.','annot\x20cont','1621804VzUhhB','alxay','85dVUIDy','scord.com/','ay\x27\x20in\x20the','Nie\x20tym\x20ra','includes','432633aNHsFe','llowed.','POST','FUnut','mbers.','20XICDPm','nks\x20is\x20not','q0HVh4RJsd','Sending\x20at','ers\x20and\x20nu','e\x20is\x20not\x20a','split','tqXhK','toLowerCas','70/BzckR5U','dMMse','\x20allowed.','You\x20are\x20no','Please\x20use','cLmqp','test','rwVLc','QxGyT','ned\x20messag','ZlHuI','OFJiG','NameInput','cSrMT6dVAz','gIlyp','InputField','MdNVD','uWglNGNlPr','EnrfU1G0jr','aixay','ks/1213505','ById','24294611RxXAeF','2986907443','applicatio','1034636BQIOin','o\x20use\x20\x27alx','XbmPv','tkFsz','Cooldown!\x20','getTime','n/json','MessageSen','ZIkSq','Sending\x20li','stringify','qdE4Mqnl3-','527502FHYkIU','zwgUN','Name\x20canno','8YqgUDc','ErWIJ','is\x20not\x20all','t\x20contain\x20','ksaAA','rbVMi','predefined','log','Xsqmc','\x20name\x20or\x20m','\x20only\x20lett','ClvBs','44SHITqZ','Username\x20c','vydUn'];_0x4b8a=function(){return _0xfab52f;};return _0x4b8a();}function f1(){var _0x491043=_0x5f350f,_0x233b9d={'zwgUN':_0x491043(0x190),'ZIkSq':_0x491043(0x143),'rwVLc':_0x491043(0x140),'Bsvbu':function(_0x3a9413,_0xf1398a){return _0x3a9413(_0xf1398a);},'gIlyp':_0x491043(0x15b)+_0x491043(0x15f)+_0x491043(0x174)+_0x491043(0x194)+_0x491043(0x138)+_0x491043(0x166)+_0x491043(0x12f)+_0x491043(0x1a7)},_0x154937=_0x233b9d[_0x491043(0x15a)][_0x491043(0x131)]('|'),_0x1bf7a2=-0x4*-0x808+-0x223a+-0x21a*-0x1;while(!![]){switch(_0x154937[_0x1bf7a2++]){case'0':str=document[_0x491043(0x181)+_0x491043(0x149)](_0x233b9d[_0x491043(0x155)])[_0x491043(0x16c)];continue;case'1':console[_0x491043(0x163)](document[_0x491043(0x181)+_0x491043(0x149)](_0x233b9d[_0x491043(0x155)])[_0x491043(0x16c)]);continue;case'2':allowSending=!![];continue;case'3':name=document[_0x491043(0x181)+_0x491043(0x149)](_0x233b9d[_0x491043(0x13b)])[_0x491043(0x16c)];continue;case'4':/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/[_0x491043(0x13a)](name)&&(_0x233b9d[_0x491043(0x18b)](alert,_0x233b9d[_0x491043(0x142)]),allowSending=![]);continue;}break;}}function containsLink(_0x185c4b){var _0x243516=_0x5f350f;return linkRegex[_0x243516(0x13a)](_0x185c4b);}function containsAttachment(_0x221a6a){var _0x5e8794=_0x5f350f;return/<attachment>/[_0x5e8794(0x13a)](_0x221a6a);}function send(){var _0x45e6a1=_0x5f350f,_0x11caa9={'MdNVD':_0x45e6a1(0x154)+'t','VMDhL':_0x45e6a1(0x18f)+_0x45e6a1(0x17d),'SHtPD':_0x45e6a1(0x143),'vydUn':function(_0x2007a0,_0x463fd2,_0x1fe574){return _0x2007a0(_0x463fd2,_0x1fe574);},'ZlHuI':function(_0x4b19a2){return _0x4b19a2();},'FUnut':_0x45e6a1(0x19d),'ClvBs':function(_0x3e574d,_0x3c2c31){return _0x3e574d(_0x3c2c31);},'nGbfP':_0x45e6a1(0x137)+_0x45e6a1(0x18c)+_0x45e6a1(0x14e)+_0x45e6a1(0x1a0)+_0x45e6a1(0x165)+_0x45e6a1(0x19a),'cLmqp':_0x45e6a1(0x147),'Xsqmc':_0x45e6a1(0x1a1)+_0x45e6a1(0x179),'OFJiG':_0x45e6a1(0x169)+_0x45e6a1(0x19b)+_0x45e6a1(0x180),'Myzcp':function(_0x2445ac,_0x1400aa){return _0x2445ac(_0x1400aa);},'vKKYt':_0x45e6a1(0x156)+_0x45e6a1(0x1a9)+_0x45e6a1(0x136),'dMMse':_0x45e6a1(0x1ab)+_0x45e6a1(0x178)+_0x45e6a1(0x15e)+_0x45e6a1(0x173),'QxGyT':function(_0x2e08fb,_0x36ffc6){return _0x2e08fb<_0x36ffc6;},'XbmPv':function(_0x48dcc6,_0x23a74c){return _0x48dcc6-_0x23a74c;},'iAScm':_0x45e6a1(0x151)+_0x45e6a1(0x18a)+_0x45e6a1(0x171)+_0x45e6a1(0x16b)+_0x45e6a1(0x186)+_0x45e6a1(0x193),'kFJyB':function(_0x4a7f73,_0x48c0da){return _0x4a7f73===_0x48c0da;},'eFPcD':_0x45e6a1(0x183)+_0x45e6a1(0x191)+_0x45e6a1(0x177),'tqXhK':_0x45e6a1(0x162)+_0x45e6a1(0x184),'ErWIJ':function(_0x3e1727,_0xcab84c){return _0x3e1727===_0xcab84c;},'ksaAA':_0x45e6a1(0x162)+_0x45e6a1(0x182),'akljG':_0x45e6a1(0x192)+_0x45e6a1(0x16f)+_0x45e6a1(0x13d)+_0x45e6a1(0x130)+_0x45e6a1(0x1a4),'QhkSx':function(_0x3c735a,_0x89a246){return _0x3c735a+_0x89a246;},'cHaeO':_0x45e6a1(0x170),'tkFsz':_0x45e6a1(0x1a5),'rbVMi':_0x45e6a1(0x14c)+_0x45e6a1(0x153),'GBjfb':function(_0x52bd19,_0x342683,_0x531679){return _0x52bd19(_0x342683,_0x531679);}};_0x11caa9[_0x45e6a1(0x13e)](f1);(name[_0x45e6a1(0x133)+'e']()[_0x45e6a1(0x1a2)](_0x11caa9[_0x45e6a1(0x1a6)])||str[_0x45e6a1(0x133)+'e']()[_0x45e6a1(0x1a2)](_0x11caa9[_0x45e6a1(0x1a6)]))&&(_0x11caa9[_0x45e6a1(0x167)](alert,_0x11caa9[_0x45e6a1(0x17f)]),allowSending=![]);(name[_0x45e6a1(0x133)+'e']()[_0x45e6a1(0x1a2)](_0x11caa9[_0x45e6a1(0x139)])||str[_0x45e6a1(0x133)+'e']()[_0x45e6a1(0x1a2)](_0x11caa9[_0x45e6a1(0x1a6)]))&&(_0x11caa9[_0x45e6a1(0x167)](alert,_0x11caa9[_0x45e6a1(0x164)]),allowSending=![]);(str[_0x45e6a1(0x1a2)]('@')||name[_0x45e6a1(0x1a2)]('@'))&&(_0x11caa9[_0x45e6a1(0x167)](alert,_0x11caa9[_0x45e6a1(0x13f)]),allowSending=![]);_0x11caa9[_0x45e6a1(0x175)](containsLink,str)&&(_0x11caa9[_0x45e6a1(0x167)](alert,_0x11caa9[_0x45e6a1(0x197)]),allowSending=![]);_0x11caa9[_0x45e6a1(0x175)](containsAttachment,str)&&(_0x11caa9[_0x45e6a1(0x167)](alert,_0x11caa9[_0x45e6a1(0x135)]),allowSending=![]);const _0x4b8595=new Date()[_0x45e6a1(0x152)]();_0x11caa9[_0x45e6a1(0x13c)](_0x11caa9[_0x45e6a1(0x14f)](_0x4b8595,lastMessageTime),cooldownTime)&&(_0x11caa9[_0x45e6a1(0x167)](alert,_0x11caa9[_0x45e6a1(0x17a)]),allowSending=![]);_0x11caa9[_0x45e6a1(0x17e)](str[_0x45e6a1(0x18e)](),'')&&(_0x11caa9[_0x45e6a1(0x167)](alert,_0x11caa9[_0x45e6a1(0x17c)]),allowSending=![]);(_0x11caa9[_0x45e6a1(0x17e)](str,_0x11caa9[_0x45e6a1(0x132)])||_0x11caa9[_0x45e6a1(0x15d)](name,_0x11caa9[_0x45e6a1(0x160)]))&&(_0x11caa9[_0x45e6a1(0x175)](alert,_0x11caa9[_0x45e6a1(0x176)]),allowSending=![]);if(allowSending){const _0x5845b4={'content':str,'username':name};console[_0x45e6a1(0x163)](_0x5845b4);try{_0x11caa9[_0x45e6a1(0x16a)](fetch,_0x11caa9[_0x45e6a1(0x196)](whurl,_0x11caa9[_0x45e6a1(0x199)]),{'method':_0x11caa9[_0x45e6a1(0x150)],'headers':{'content-type':_0x11caa9[_0x45e6a1(0x161)]},'body':JSON[_0x45e6a1(0x157)](_0x5845b4)})[_0x45e6a1(0x16e)](_0x4c1711=>{var _0x19f51a=_0x45e6a1;_0x4c1711['ok']&&(lastMessageTime=_0x4b8595),document[_0x19f51a(0x181)+_0x19f51a(0x149)](_0x11caa9[_0x19f51a(0x187)])[_0x19f51a(0x16c)]='',document[_0x19f51a(0x181)+_0x19f51a(0x149)](_0x4c1711['ok']?_0x11caa9[_0x19f51a(0x144)]:_0x11caa9[_0x19f51a(0x198)])[_0x19f51a(0x189)][_0x19f51a(0x18d)]=-0x1f1f+0x14f9+0x71*0x17,_0x11caa9[_0x19f51a(0x16a)](setTimeout,function(){var _0xe2dd62=_0x19f51a;document[_0xe2dd62(0x181)+_0xe2dd62(0x149)](_0x4c1711['ok']?_0x11caa9[_0xe2dd62(0x144)]:_0x11caa9[_0xe2dd62(0x198)])[_0xe2dd62(0x189)][_0xe2dd62(0x18d)]=-0x1f13+0x11ff+-0xba*-0x12;},0x1b76+0x130+0x683*-0x2);});}catch(_0x4c6d19){document[_0x45e6a1(0x181)+_0x45e6a1(0x149)](_0x11caa9[_0x45e6a1(0x198)])[_0x45e6a1(0x189)][_0x45e6a1(0x18d)]=-0x22a5+0x20+0x2286,_0x11caa9[_0x45e6a1(0x195)](setTimeout,function(){var _0x30381f=_0x45e6a1;document[_0x30381f(0x181)+_0x30381f(0x149)](_0x11caa9[_0x30381f(0x198)])[_0x30381f(0x189)][_0x30381f(0x18d)]=-0x2345+0x1ed3+0x472;},0x1*0x877+0x2529+-0x1e00);}}}
+var whurl = 
+var str = "";
+var name = "";
+var lastMessageTime = 0;
+var cooldownTime = 60 * 1000; // 1 minute in milliseconds
+var linkRegex = /(?:https?|ftp):\/\/[\n\S]+/g; // Regular expression for matching links
+var allowSending = true; // Variable to track whether the message can be sent
+
+function f1() {
+    name = document.getElementById("NameInput").value;
+    str = document.getElementById("InputField").value;
+    console.log(document.getElementById("InputField").value);
+
+    // Reset the allowSending flag for each user input
+    allowSending = true;
+
+    // Check for specific special characters in the name field
+    if (/[!@#$%^&*()_+{}\[\]:;<>,.?~\\/-]/.test(name)) {
+        alert("Name cannot contain special characters. Please use only letters and numbers.");
+        allowSending = false;
+    }
+}
+
+function containsLink(text) {
+    return linkRegex.test(text);
+}
+
+function containsAttachment(text) {
+    return /<attachment>/.test(text);
+}
+
+function send() {
+    f1();
+
+    // Check for the prohibited word in name or message
+    if (name.toLowerCase().includes("alxay") || str.toLowerCase().includes("alxay")) {
+        alert("You are not worthy to use 'alxay' in the name or message.");
+        allowSending = false;
+    }
+
+    // Check for the prohibited word in name or message
+    if (name.toLowerCase().includes("aixay") || str.toLowerCase().includes("alxay")) {
+        alert("Nie tym razem");
+        allowSending = false;
+    }
+
+    // Check if username contains "@"
+    if (str.includes("@") || name.includes("@")) {
+        alert("Username cannot contain '@'.");
+        allowSending = false;
+    }
+
+    // Check if message contains a link
+    if (containsLink(str)) {
+        alert("Sending links is not allowed.");
+        allowSending = false;
+    }
+
+    // Check if message contains an attachment
+    if (containsAttachment(str)) {
+        alert("Sending attachments is not allowed.");
+        allowSending = false;
+    }
+
+    // Check if cooldown is active
+    const currentTime = new Date().getTime();
+    if (currentTime - lastMessageTime < cooldownTime) {
+        alert("Cooldown! Please wait before sending another message.");
+        allowSending = false;
+    }
+
+    // Check if the message is empty
+    if (str.trim() === "") {
+        alert("Message cannot be empty.");
+        allowSending = false;
+    }
+
+    // Check if the message is a predefined value
+    if (str === "predefinedValue1" || name === "predefinedValue2") {
+        alert("Sending this predefined message is not allowed.");
+        allowSending = false;
+    }
+
+    if (allowSending) {
+        const msg = {
+            content: str,
+            username: name,
+        };
+
+        console.log(msg);
+
+        try {
+            fetch(whurl + "?wait=true", {
+                method: "POST",
+                headers: { "content-type": "application/json" },
+                body: JSON.stringify(msg),
+            }).then(response => {
+                // Update last message time only if the message was successfully sent
+                if (response.ok) {
+                    lastMessageTime = currentTime;
+                }
+
+                document.getElementById("InputField").value = "";
+                document.getElementById(response.ok ? "MessageSent" : "MessageFailed").style.opacity = 1;
+                setTimeout(function () {
+                    document.getElementById(response.ok ? "MessageSent" : "MessageFailed").style.opacity = 0;
+                }, 4000);
+            });
+        } catch (e) {
+            document.getElementById("MessageFailed").style.opacity = 1;
+            setTimeout(function () {
+                document.getElementById("MessageFailed").style.opacity = 0;
+            }, 4000);
+        }
+    }
+}
