@@ -1,4 +1,3 @@
-var whurl = "";
 var str = "";
 var name = "";
 var lastMessageTime = 0;
